@@ -1,0 +1,48 @@
+input {
+
+    width: 15vw !important;
+
+}
+
+div {
+
+    margin: 2.5vh;
+
+}
+
+.this-card {
+
+    background-image: radial-gradient(circle at -7.92% 9.44%, #b949ef 0, #9c42f1 25%, #783cf2 50%, #4239f3 75%, #0038f5 100%);
+
+}
+
+.this-card:hover {
+
+    border: white;
+    background-image: radial-gradient(circle at -14.09% 20.12%, #c0b73c 0, #cab035 5.56%, #d4a830 11.11%, #dd9e2c 16.67%, #e4932a 22.22%, #ea862b 27.78%, #ee782d 33.33%, #f16831 38.89%, #f35436 44.44%, #f23c3c 50%, #f01643 55.56%, #ed004d 61.11%, #e80058 66.67%, #e20065 72.22%, #da0073 77.78%, #cf0082 83.33%, #c20093 88.89%, #b200a3 94.44%, #9d00b3 100%);
+    border-width: 0.25vw 0.25vw 0.25vw 0.25vw;
+    border-style: solid;
+
+}
+
+.logo {
+
+    width:15vw;
+    height:auto;
+    margin: 1.5vh !important;
+
+}
+
+.info-button {
+
+    color: white;
+    background-color: #2ad66c;
+
+}
+
+.info-button:hover {
+
+    color: white;
+    background-color: #00c4f5;
+
+}
