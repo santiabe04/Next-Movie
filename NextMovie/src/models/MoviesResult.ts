@@ -1,4 +1,4 @@
-export interface NowPlayingModel {
+export interface MoviesResult {
     results:       Movie[];
     page:          number;
     total_results: number;

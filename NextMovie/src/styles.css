@@ -3,3 +3,52 @@ body {
     font-family: 'Courier New', Courier, monospace !important;
 
 }
+
+input {
+
+    width: 15vw !important;
+
+}
+
+div {
+
+    margin: 1.25vh;
+
+}
+
+.this-card {
+
+    color: black !important;
+
+}
+
+.this-card:hover {
+
+    background-color: rgb(129, 129, 129);
+    color: white !important;
+    border-width: 0.25vw 0.25vw 0.25vw 0.25vw;
+    border-style: solid;
+
+}
+
+.logo {
+
+    width:15vw;
+    height:auto;
+    margin: 1.5vh !important;
+
+}
+
+.info-button {
+
+    color:white !important;
+    background-color: black !important;
+
+}
+
+.info-button:hover {
+
+    color: rgb(0, 0, 0) !important;
+    background-color: white !important;
+
+}

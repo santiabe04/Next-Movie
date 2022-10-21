@@ -1,5 +1,6 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
-import { Movie, NowPlayingModel } from 'src/models/NowPlayingModel';
+import { Router } from '@angular/router';
+import { Movie } from 'src/models/MoviesResult';
 import { MoviesService } from 'src/services/movies.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class LandingComponent implements OnInit {
 
   searchText:any = [];
 
-  constructor(private moviesService:MoviesService) {
+  constructor(private moviesService:MoviesService, private router:Router) {
     
   }
 
@@ -41,6 +42,11 @@ export class LandingComponent implements OnInit {
         console.log(this.result);
       })
     }
+  }
+
+  selectMovie(idMovie:Number) {
+    sessionStorage.setItem('selectedMovie', idMovie.toString());
+    this.router.navigateByUrl('/similar');
   }
 
 }

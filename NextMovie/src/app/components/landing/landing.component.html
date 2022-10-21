@@ -30,9 +30,9 @@
 
         <div class="card text-white this-card" style="width: 18vw;" *ngFor="let movie of result">
             
-            <img class="card-img-top" style="margin-top: 1.25vh;" src="http://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" alt="Imagen">
+            <img (click)="selectMovie(movie.id)" class="card-img-top" style="margin-top: 1.25vh;" src="http://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" alt="Imagen">
 
-            <div class="card-body">
+            <div class="card-body" (click)="selectMovie(movie.id)">
                 <h5>{{ movie.title }}</h5>
                 <p>Puntaje de Usuarios: {{ movie.vote_average }}</p>
             </div>

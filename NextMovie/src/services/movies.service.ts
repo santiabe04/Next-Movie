@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { Movie, NowPlayingModel } from 'src/models/NowPlayingModel';
+import { Movie, MoviesResult } from 'src/models/MoviesResult';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class MoviesService {
 
   getPlayingNow():Observable<Movie[]> {
 
-    return this.http.get<NowPlayingModel>('https://api.themoviedb.org/3/movie/now_playing?api_key=6dd700e2484582ba5b7d8205c9767990&language=es-ES&page=1').pipe(
+    return this.http.get<MoviesResult>('https://api.themoviedb.org/3/movie/now_playing?api_key=6dd700e2484582ba5b7d8205c9767990&language=es-ES&page=1').pipe(
       map( (res) => res.results )
     );
   }
@@ -30,7 +30,13 @@ export class MoviesService {
       }
     }
 
-    return this.http.get<NowPlayingModel>('https://api.themoviedb.org/3/search/movie?api_key=6dd700e2484582ba5b7d8205c9767990&language=es-Es&query='+ searchText +'&page=1&include_adult=false').pipe(
+    return this.http.get<MoviesResult>('https://api.themoviedb.org/3/search/movie?api_key=6dd700e2484582ba5b7d8205c9767990&language=es-Es&query='+ searchText +'&page=1&include_adult=false').pipe(
+      map( (res) => res.results )
+    );
+  }
+
+  getSimilarMovieById(id:string) {
+    return this.http.get<MoviesResult>(' https://api.themoviedb.org/3/movie/'+id+'/similar?api_key=6dd700e2484582ba5b7d8205c9767990&language=en-US&page=1').pipe(
       map( (res) => res.results )
     );
   }
