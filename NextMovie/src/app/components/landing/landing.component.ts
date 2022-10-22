@@ -39,7 +39,6 @@ export class LandingComponent implements OnInit {
     else {
       this.moviesService.getSearchResult(this.searchText).subscribe( res => {
         this.result = res;
-        console.log(this.result);
       })
     }
   }
@@ -47,6 +46,10 @@ export class LandingComponent implements OnInit {
   selectMovie(idMovie:Number) {
     sessionStorage.setItem('selectedMovie', idMovie.toString());
     this.router.navigateByUrl('/similar');
+  }
+
+  selectMovieInfo(idMovie:Number) {
+    this.router.navigateByUrl('/movie/'+idMovie);
   }
 
 }

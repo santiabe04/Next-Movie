@@ -1,3 +1,7 @@
+html {
+    max-width: 98%;
+}
+
 body {
 
     font-family: 'Courier New', Courier, monospace !important;
@@ -7,12 +11,6 @@ body {
 input {
 
     width: 15vw !important;
-
-}
-
-div {
-
-    margin: 1.25vh;
 
 }
 
@@ -33,7 +31,7 @@ div {
 
 .logo {
 
-    width:15vw;
+    width:7.5vw;
     height:auto;
     margin: 1.5vh !important;
 

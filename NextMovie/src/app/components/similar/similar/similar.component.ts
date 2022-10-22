@@ -1,4 +1,5 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Movie } from 'src/models/MoviesResult';
 import { MoviesService } from 'src/services/movies.service';
 
@@ -15,7 +16,7 @@ export class SimilarComponent implements OnInit {
 
   idMovie:string = (sessionStorage.getItem('selectedMovie') || '');
 
-  constructor(private moviesService:MoviesService) { }
+  constructor(private moviesService:MoviesService, private router:Router) { }
 
   ngOnInit(): void {
     if(this.idMovie != '') {
@@ -23,13 +24,16 @@ export class SimilarComponent implements OnInit {
     }
     else {
       //TO DO MANAGE ERRORS
-    }
+    };
   }
 
   getSimilar = () => {
-      this.moviesService.getSimilarMovieById(this.idMovie).subscribe( res => {
-        this.result = res;
-        console.log(this.result);
-        })
-      }
+    this.moviesService.getSimilarMovieById(this.idMovie).subscribe( res => {
+      this.result = res;
+    })
+  }
+
+  selectMovieInfo(idMovie:Number) {
+    this.router.navigateByUrl('/movie/'+idMovie);
+  }
 }

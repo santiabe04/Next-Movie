@@ -1,7 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
+import { Cast, MovieCreditsModel } from 'src/models/MovieCreditsModel';
+import { MovieModel } from 'src/models/MovieModel';
 import { Movie, MoviesResult } from 'src/models/MoviesResult';
+import { MovieStreamsModel } from 'src/models/MovieStreamsModel';
 
 @Injectable({
   providedIn: 'root'
@@ -36,8 +39,32 @@ export class MoviesService {
   }
 
   getSimilarMovieById(id:string) {
-    return this.http.get<MoviesResult>(' https://api.themoviedb.org/3/movie/'+id+'/similar?api_key=6dd700e2484582ba5b7d8205c9767990&language=en-US&page=1').pipe(
+    return this.http.get<MoviesResult>('https://api.themoviedb.org/3/movie/'+id+'/similar?api_key=6dd700e2484582ba5b7d8205c9767990&language=es-Es&page=1').pipe(
       map( (res) => res.results )
+    );
+  }
+
+  getMovieById(id:string) {
+    return this.http.get<MovieModel>('https://api.themoviedb.org/3/movie/'+id+'?api_key=6dd700e2484582ba5b7d8205c9767990&language=es-ES').pipe(
+      map( (res) => res )
+    );
+  }
+
+  getMovieDetailsCrew(id:string) {
+    return this.http.get<MovieCreditsModel>(' https://api.themoviedb.org/3/movie/'+id+'/credits?api_key=6dd700e2484582ba5b7d8205c9767990&language=es-ES').pipe(
+      map( (res) => res.crew )
+    );
+  }
+
+  getMovieDetailsCast(id:string) {
+    return this.http.get<MovieCreditsModel>(' https://api.themoviedb.org/3/movie/'+id+'/credits?api_key=6dd700e2484582ba5b7d8205c9767990&language=es-ES').pipe(
+      map( (res) => res.cast )
+    );
+  }
+
+  getMovieStreamPlattforms(id:string) {
+    return this.http.get<MovieStreamsModel>(' https://api.themoviedb.org/3/movie/'+id+'/watch/providers?api_key=6dd700e2484582ba5b7d8205c9767990').pipe(
+      map( (res) => res.results.AR )
     );
   }
 }
