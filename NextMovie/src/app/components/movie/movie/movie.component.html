@@ -14,7 +14,11 @@
 
             <img src="http://image.tmdb.org/t/p/w500/{{ getImage() }}" class="poster-img" alt="">
             <br>
-            <i class="fa-solid fa-star fa-2xl" *ngFor="let rate of ratingList"></i><i class="fa-regular fa-star fa-2xl" *ngFor="let rate of ratingTotalList"></i>
+            <div>
+
+                <i class="fa-solid fa-star fa-2xl" *ngFor="let rate of starsList"></i><i class="fa-solid fa-star-half-stroke fa-2xl" *ngFor="let rate of starsHalfList"></i><i class="fa-regular fa-star fa-2xl" *ngFor="let rate of starsEmptyList"></i>
+            
+            </div>
             <br>
             <p>Duración: {{ runTimeFixed }}</p>
 
@@ -25,8 +29,8 @@
             <h1>{{ result['title'] }}</h1>
             <br>
             <h3>Sinopsis: </h3><p>{{ result['overview'] }}</p>
-            <h3>Director: </h3><p>{{ returnDirectors() }}</p>
-            <h3>Géneros: </h3><p>{{ returnGenres() }}</p>
+            <h3>Director/es: </h3><p>{{ returnDirectors() }}</p>
+            <h3>Género/s: </h3><p>{{ returnGenres() }}</p>
             <h3>Actores: </h3>
             
             <div class="row scrolling-wrapper flex-row flex-nowrap mt-4 pb-5 pt-2">
@@ -39,7 +43,7 @@
             
             </div>
 
-            <h3>Plataformas de Streaming: </h3>
+            <h3>Plataforma/s de Streaming: </h3>
             
             <div class="row scrolling-wrapper flex-row flex-nowrap mt-4 pb-5 pt-2" *ngIf="noStream == false">
 			

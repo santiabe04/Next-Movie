@@ -34,11 +34,17 @@ export class MovieComponent implements OnInit {
 
   rating:number = 0;
 
-  ratingList:any = [];
+  stars:number = 0;
 
-  ratingTotal:number = 0;
+  starsList:any = [];
 
-  ratingTotalList:any = [];
+  starsEmpty:number = 0;
+
+  starsEmptyList:any = [];
+
+  starsHalf:number = 0;
+
+  starsHalfList:any = [];
 
   runTime:number = 0;
 
@@ -140,15 +146,25 @@ export class MovieComponent implements OnInit {
   }
 
   getRating() {
-    this.rating = this.result['vote_average'];
-    this.rating = ~~(this.rating / 2);
-    this.ratingTotal = 5 - this.rating;
-    for(let i = 0; i < this.rating; i++) {
-      this.ratingList.push(i);
-    };
-    for(let i = 0; i < this.ratingTotal; i++) {
-      this.ratingTotalList.push(i);
-    };
+    console.log(this.result['vote_average']);
+    this.rating = this.result['vote_average'] / 2;
+    this.stars = Math.floor(this.rating);
+    if((this.rating - this.stars) > 0.5) {
+      this.starsHalf = 1;
+    }
+    this.starsEmpty = 5 - this.stars - this.starsHalf;
+    
+    for(let i = 0; i < this.stars; i++) {
+      this.starsList.push(i);
+    }
+
+    for(let i = 0; i < this.starsHalf; i++) {
+      this.starsHalfList.push(i);
+    }
+
+    for(let i = 0; i < this.starsEmpty; i++) {
+      this.starsEmptyList.push(i);
+    }
   }
 
   getRunTime() {
