@@ -8,13 +8,17 @@ import { AppComponent } from './app.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { SimilarComponent } from './components/similar/similar/similar.component';
 import { MovieComponent } from './components/movie/movie/movie.component';
+import { FilterComponent } from './components/filter/filter.component';
+import { LikedComponent } from './components/filter/liked/liked.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
     SimilarComponent,
-    MovieComponent
+    MovieComponent,
+    FilterComponent,
+    LikedComponent
   ],
   imports: [
     BrowserModule,

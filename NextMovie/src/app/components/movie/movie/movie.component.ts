@@ -1,5 +1,4 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
-import { MovieModel } from 'src/models/MovieModel';
 import { MoviesService } from 'src/services/movies.service';
 import { ActivatedRoute, Params } from '@angular/router';
 

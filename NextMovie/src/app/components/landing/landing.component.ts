@@ -45,7 +45,7 @@ export class LandingComponent implements OnInit {
 
   selectMovie(idMovie:Number) {
     sessionStorage.setItem('selectedMovie', idMovie.toString());
-    this.router.navigateByUrl('/similar');
+    this.router.navigateByUrl('/filter');
   }
 
   selectMovieInfo(idMovie:Number) {
