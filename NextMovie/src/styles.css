@@ -50,3 +50,28 @@ input {
     background-color: white !important;
 
 }
+
+.main-background-color {
+    background-color:#1C1717;
+}
+
+.main-color {
+    background-color:#F5E801;
+}
+
+input:not(:placeholder-shown) {
+    border: 2px solid #F5E801;
+    border-radius: 20px;
+    background-color:transparent !important;
+    color:#FFFFFF !important;
+}
+
+
+input:placeholder-shown {
+    border: 2px solid #F5E801 !important;
+    border-radius: 20px;
+    background-color:transparent !important;
+    color:#FFFFFF;
+    
+}
+
