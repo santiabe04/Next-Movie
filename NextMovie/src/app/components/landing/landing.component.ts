@@ -10,13 +10,15 @@ import { MoviesService } from 'src/services/movies.service';
 })
 export class LandingComponent implements OnInit {
 
-  @Input() result: Movie[] = [];
+  @Input() result:any = [];
 
   @HostBinding('class') classes='row';
 
   searchText:any = [];
 
   resultEmpty:boolean = true;
+
+  showBody:any = [];
 
   constructor(private moviesService:MoviesService, private router:Router) {
     
@@ -25,17 +27,14 @@ export class LandingComponent implements OnInit {
   ngOnInit(): void {
   
   }
-
-  getPlayingNow = () => {
-    this.moviesService.getPlayingNow().subscribe( res => {
-      this.result = res;
-    })
-  }
   
   getSearch = () => {
     if(typeof this.searchText != null && (typeof this.searchText === 'string' && this.searchText.trim().length != 0)) {
       this.moviesService.getSearchResult(this.searchText).subscribe( res => {
         this.result = res;
+        for(let i = 0; i < this.result.length; i++) {
+          this.showBody.push([this.result[i]['id'],false]);
+        }
       })
       this.resultEmpty = false;
     }
@@ -51,6 +50,30 @@ export class LandingComponent implements OnInit {
 
   selectMovieInfo(idMovie:Number) {
     this.router.navigateByUrl('/movie/'+idMovie);
+  }
+
+  mouseOver(id:any) {
+    for (var i=0; i < this.showBody.length; i++) {
+      if (this.showBody[i][0] === id) {
+        this.showBody[i][1] = true;
+      }
+    }
+  }
+
+  mouseOut(id:any) {
+    for (var i=0; i < this.showBody.length; i++) {
+      if (this.showBody[i][0] === id) {
+        this.showBody[i][1] = false;
+      }
+    }
+  }
+
+  getShowBody(id:any) {
+    for (var i=0; i < this.showBody.length; i++) {
+      if (this.showBody[i][0] === id) {
+        return this.showBody[i][1];
+      }
+    }
   }
 
 }
