@@ -16,13 +16,13 @@ export class LandingComponent implements OnInit {
 
   searchText:any = [];
 
+  resultEmpty:boolean = true;
+
   constructor(private moviesService:MoviesService, private router:Router) {
     
   }
 
   ngOnInit(): void {
-
-    this.getPlayingNow();
   
   }
 
@@ -33,13 +33,14 @@ export class LandingComponent implements OnInit {
   }
   
   getSearch = () => {
-    if(typeof this.searchText == null || (typeof this.searchText === 'string' && this.searchText.trim().length == 0)) {
-      this.getPlayingNow();
-    }
-    else {
+    if(typeof this.searchText != null && (typeof this.searchText === 'string' && this.searchText.trim().length != 0)) {
       this.moviesService.getSearchResult(this.searchText).subscribe( res => {
         this.result = res;
       })
+      this.resultEmpty = false;
+    }
+    else {
+      this.resultEmpty = true;
     }
   }
 

@@ -3,3 +3,13 @@ div {
     margin: 1.25vh;
 
 }
+
+.div-centered {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 55vh;
+
+}

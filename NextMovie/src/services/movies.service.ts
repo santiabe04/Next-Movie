@@ -39,7 +39,8 @@ export class MoviesService {
   }
 
   getSimilarMovieById(id:string) {
-    return this.http.get<MoviesResult>('https://api.themoviedb.org/3/movie/'+id+'/similar?api_key=6dd700e2484582ba5b7d8205c9767990&language=es-Es&page=1').pipe(
+    console.log(id);
+    return this.http.get<MoviesResult>('https://api.themoviedb.org/3/movie/'+id+'/recommendations?api_key=6dd700e2484582ba5b7d8205c9767990&language=es-Es&page=1').pipe(
       map( (res) => res.results )
     );
   }
