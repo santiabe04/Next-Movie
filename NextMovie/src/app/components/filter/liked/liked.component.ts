@@ -22,16 +22,19 @@ export class LikedComponent implements OnInit {
     this.getMovie();
   }
 
+  /* Service's Response to Movie Petition */
   getMovie() {
     this.moviesService.getMovieById(this.idMovie).subscribe( res => {
       this.result = res.poster_path;
     });
   }
 
+  /* Returns Movie Poster */
   getImage() {
     return this.result;
   }
 
+  /* Re-routes to Similar Movies Page */
   goToSelectedFilter(selected:number) {
     sessionStorage.setItem('selectedMovie', this.idMovie.toString());
     this.router.navigateByUrl('/similar');

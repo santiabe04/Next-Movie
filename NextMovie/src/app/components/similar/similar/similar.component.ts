@@ -27,12 +27,14 @@ export class SimilarComponent implements OnInit {
     };
   }
 
+  /* Service's Response to Similar Movies Petition */
   getSimilar = () => {
     this.moviesService.getSimilarMovieById(this.idMovie).subscribe( res => {
       this.result = res;
     })
   }
 
+  /* Re-routes to Movie's Data Page */
   selectMovieInfo(idMovie:Number) {
     this.router.navigateByUrl('/movie/'+idMovie);
   }

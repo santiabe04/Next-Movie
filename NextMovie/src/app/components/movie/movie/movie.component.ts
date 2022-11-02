@@ -61,21 +61,26 @@ export class MovieComponent implements OnInit {
     }
   }
 
+  /* Calls the Service Functions */
   getMovie() {
+    /* Service's Response to Selected Movie */
     this.moviesService.getMovieById(this.idMovie).subscribe( res => {
       this.result = res;
       this.getGenres();
       this.getRating();
       this.getRunTime();
     });
+    /* Service's Response to Movie Crew Petition */
     this.moviesService.getMovieDetailsCrew(this.idMovie).subscribe ( res => {
       this.resultCrew = res;
       this.getDirectors();
     });
+    /* Service's Response to Movie Cast Petition */
     this.moviesService.getMovieDetailsCast(this.idMovie).subscribe ( res => {
       this.resultCast = res;
       this.getActors();
     });
+    /* Service's Response to Movie Streaming Plattforms Petition */
     this.moviesService.getMovieStreamPlattforms(this.idMovie).subscribe ( res => {
       this.resultStream = res;
       if(this.resultStream != null) {
@@ -87,10 +92,12 @@ export class MovieComponent implements OnInit {
     });
   }
 
+  /* Returns the Movie Poster */
   getImage() {
     return this.result['poster_path'];
   }
 
+  /* Gets All the Movie's Directors Names */
   getDirectors() {
     for(let i = 0; i < this.resultCrew.length; i++) {
       if(this.resultCrew[i]['job'] === 'Director') {
@@ -99,20 +106,24 @@ export class MovieComponent implements OnInit {
     };
   }
 
+  /* Returns Directors Names */
   returnDirectors() {
     return this.directors.join(', ');
   }
 
+  /* Gets All the Movie's Genres */
   getGenres() {
     for(let i = 0; i < this.result['genres'].length; i++) {
       this.genres.push(this.result['genres'][i]['name']);
     };
   }
 
+  /* Returns Genres */
   returnGenres() {
     return this.genres.join(', ');
   }
 
+  /* Gets All the Movie's Cast */
   getActors() {
     for(let i = 0; i < this.resultCast.length; i++) {
       if(this.resultCast[i]['known_for_department'] === 'Acting') {
@@ -121,6 +132,7 @@ export class MovieComponent implements OnInit {
     };
   }
 
+  /* Gets All the Movie's Streaming Plattforms */
   getPlattforms() {
     if(this.resultStream['buy']) {
       for(let i = 0; i < this.resultStream['buy'].length; i++) {
@@ -144,6 +156,7 @@ export class MovieComponent implements OnInit {
     };
   }
 
+  /* Gets the Movie's Stars Rating */
   getRating() {
     console.log(this.result['vote_average']);
     this.rating = this.result['vote_average'] / 2;
@@ -166,6 +179,7 @@ export class MovieComponent implements OnInit {
     }
   }
 
+  /* Gets the Movie's Runtime */
   getRunTime() {
     this.runTime = this.result['runtime'];
     let hours = ~~(this.runTime / 60);

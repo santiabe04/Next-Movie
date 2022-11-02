@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
+
+/* Models Imports */
 import { Cast, MovieCreditsModel } from 'src/models/MovieCreditsModel';
 import { MovieModel } from 'src/models/MovieModel';
 import { Movie, MoviesResult } from 'src/models/MoviesResult';
@@ -13,6 +15,7 @@ export class MoviesService {
 
   constructor(private http:HttpClient) { }
 
+  /* API's Most Viewed */
   getPlayingNow():Observable<Movie[]> {
 
     return this.http.get<MoviesResult>('https://api.themoviedb.org/3/movie/now_playing?api_key=6dd700e2484582ba5b7d8205c9767990&language=es-ES&page=1').pipe(
@@ -20,6 +23,7 @@ export class MoviesService {
     );
   }
 
+  /* API's Result to Movie Searched */
   getSearchResult(search:String) {
     let searchHelper = search.split(' ');
     let searchText:string = '';
@@ -38,6 +42,7 @@ export class MoviesService {
     );
   }
 
+  /* API's Result to Selected Movie Similar */
   getSimilarMovieById(id:string) {
     console.log(id);
     return this.http.get<MoviesResult>('https://api.themoviedb.org/3/movie/'+id+'/recommendations?api_key=6dd700e2484582ba5b7d8205c9767990&language=es-Es&page=1').pipe(
@@ -45,24 +50,28 @@ export class MoviesService {
     );
   }
 
+  /* API's Result to Selected Movie */
   getMovieById(id:string) {
     return this.http.get<MovieModel>('https://api.themoviedb.org/3/movie/'+id+'?api_key=6dd700e2484582ba5b7d8205c9767990&language=es-ES').pipe(
       map( (res) => res )
     );
   }
 
+  /* API's Result to Selected Movie Crew Data */
   getMovieDetailsCrew(id:string) {
     return this.http.get<MovieCreditsModel>(' https://api.themoviedb.org/3/movie/'+id+'/credits?api_key=6dd700e2484582ba5b7d8205c9767990&language=es-ES').pipe(
       map( (res) => res.crew )
     );
   }
 
+  /* API's Result to Selected Movie Cast Data */
   getMovieDetailsCast(id:string) {
     return this.http.get<MovieCreditsModel>(' https://api.themoviedb.org/3/movie/'+id+'/credits?api_key=6dd700e2484582ba5b7d8205c9767990&language=es-ES').pipe(
       map( (res) => res.cast )
     );
   }
 
+  /* API's Result to Selected Movie Argentina Available Streaming Plattforms */
   getMovieStreamPlattforms(id:string) {
     return this.http.get<MovieStreamsModel>(' https://api.themoviedb.org/3/movie/'+id+'/watch/providers?api_key=6dd700e2484582ba5b7d8205c9767990').pipe(
       map( (res) => res.results.AR )

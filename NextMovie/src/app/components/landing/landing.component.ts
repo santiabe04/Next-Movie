@@ -28,6 +28,7 @@ export class LandingComponent implements OnInit {
   
   }
   
+  /* Service's Response to Searched Movie */
   getSearch = () => {
     if(typeof this.searchText != null && (typeof this.searchText === 'string' && this.searchText.trim().length != 0)) {
       this.moviesService.getSearchResult(this.searchText).subscribe( res => {
@@ -43,15 +44,18 @@ export class LandingComponent implements OnInit {
     }
   }
 
+  /* Re-routes to Filters Page */
   selectMovie(idMovie:Number) {
     sessionStorage.setItem('selectedMovie', idMovie.toString());
     this.router.navigateByUrl('/filter');
   }
 
+  /* Re-routes to Movie Data Page */
   selectMovieInfo(idMovie:Number) {
     this.router.navigateByUrl('/movie/'+idMovie);
   }
 
+  /* Reaction to Mouse Over Movie Card */
   mouseOver(id:any) {
     for (var i=0; i < this.showBody.length; i++) {
       if (this.showBody[i][0] === id) {
@@ -60,6 +64,7 @@ export class LandingComponent implements OnInit {
     }
   }
 
+  /* Reaction to Mouse Out Movie Card */
   mouseOut(id:any) {
     for (var i=0; i < this.showBody.length; i++) {
       if (this.showBody[i][0] === id) {
@@ -68,6 +73,7 @@ export class LandingComponent implements OnInit {
     }
   }
 
+  /* Returns Card Visibility Status */
   getShowBody(id:any) {
     for (var i=0; i < this.showBody.length; i++) {
       if (this.showBody[i][0] === id) {
