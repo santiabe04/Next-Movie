@@ -29,3 +29,20 @@ i {
     box-shadow: none;
     opacity: 0.9;
 }
+
+.movie-font {
+	color: #FFFFFF;
+}
+
+.star-color {
+	color: #F5E801;
+}
+
+.movie-cast-radius {
+    border-radius: 20px; 
+}
+
+.streaming-platforms-radius {
+    border-radius: 20px;
+    background-color:transparent !important;
+}

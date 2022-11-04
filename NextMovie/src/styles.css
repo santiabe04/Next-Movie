@@ -52,7 +52,7 @@ input {
 }
 
 .main-background-color {
-    background-color:#1C1717;
+    background-color:#1C1717 !important;
 }
 
 .main-color {
@@ -75,3 +75,13 @@ input:placeholder-shown {
     
 }
 
+
+.padding{
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+.movie-poster {
+	border: 2px solid #F5E801;
+    border-radius: 10px;
+}
