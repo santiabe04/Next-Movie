@@ -17,6 +17,9 @@ body {
 .this-card {
 
     color: black !important;
+    width: 18vw;
+    height: 30vw;
+    background-size: 18vw 30vw;
 
 }
 
@@ -24,8 +27,8 @@ body {
 
     background-color: rgb(129, 129, 129);
     color: white !important;
-    border-width: 0.25vw 0.25vw 0.25vw 0.25vw;
     border-style: solid;
+    border-color: black;
 
 }
 
