@@ -25,7 +25,6 @@ export class LandingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getPlayingNow();
     
     var input = document.getElementById("search-input");
     if (input != null){ 
