@@ -55,3 +55,38 @@ body {
     background-color: white !important;
 
 }
+
+.main-background-color {
+    background-color:#1C1717 !important;
+}
+
+.main-color {
+    background-color:#F5E801;
+}
+
+input:not(:placeholder-shown) {
+    border: 2px solid #F5E801;
+    border-radius: 20px;
+    background-color:transparent !important;
+    color:#FFFFFF !important;
+}
+
+
+input:placeholder-shown {
+    border: 2px solid #F5E801 !important;
+    border-radius: 20px;
+    background-color:transparent !important;
+    color:#FFFFFF;
+    
+}
+
+
+.padding{
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+.movie-poster {
+	border: 2px solid #F5E801;
+    border-radius: 10px;
+}
