@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid main-background-color">
 
     <!-- Next Movie Logo -->
     <div class="row justify-content-center text-center">
@@ -19,16 +19,21 @@
 
         <!-- Filters Column -->
         <div class="col m2">
-            <span (click)="goToSelectedFilter(1)">
-                GENERO<!--Reemplazar por img-->
-            </span>
-
+            
+            <button class="button" (click)="goToSelectedFilter(1)">GENEROS
+                <img class="pictures" type="image" src="assets/images_icons/generos.png" />
+            </button>
+        
             <span (click)="goToSelectedFilter(2)">
-                ACTORES<!--Reemplazar por img-->
+                <button>
+                    ACTORES<!--Reemplazar por img-->
+                </button> 
             </span>
 
             <span (click)="goToSelectedFilter(3)">
-                DIRECTORES<!--Reemplazar por img-->
+                <button>
+                    DIRECTORES<!--Reemplazar por img-->
+                </button>
             </span>
         </div>
 

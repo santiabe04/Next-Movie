@@ -61,11 +61,11 @@ body {
 }
 
 .main-color {
-    background-color:#F5E801;
+    background-color:#0DD4E2;
 }
 
 input:not(:placeholder-shown) {
-    border: 2px solid #F5E801;
+    border: 2px solid #0DD4E2;
     border-radius: 20px;
     background-color:transparent !important;
     color:#FFFFFF !important;
@@ -73,7 +73,7 @@ input:not(:placeholder-shown) {
 
 
 input:placeholder-shown {
-    border: 2px solid #F5E801 !important;
+    border: 2px solid #0DD4E2 !important;
     border-radius: 20px;
     background-color:transparent !important;
     color:#FFFFFF;
@@ -87,6 +87,6 @@ input:placeholder-shown {
 }
 
 .movie-poster {
-	border: 2px solid #F5E801;
+	border: 2px solid #0DD4E2;
     border-radius: 10px;
 }
