@@ -1,9 +1,6 @@
 .button {
 
-    display: flex;
-    justify-content: center;
     align-items: center;
-
     color: #E9E9E9;
     background-color: transparent;
     border: 1px solid #FFFFFF;
@@ -13,20 +10,27 @@
     font-size: 2vw;
     cursor: pointer;
     border-radius: 20px;
-
+    margin: auto;
+    
 }
   
-.button:hover {border: 1px solid #0DD4E2;}
-
-.button:active {
+.button:hover {
     background-color: #E9E9E9 !important;
+    color: black;
     border: 1px solid #0DD4E2;
-    border-radius: 20px;
 }
 
+.pictures_genre {
+    width: 4vw;
+    height: 3vw;
+}
 
-.pictures {
-    padding: 0.40vw;
-    width: 8vw;
-    height: 8vw;
+.pictures_cast{
+    width: 3vw;
+    height: 3vw;
+}
+
+.pictures_director{
+    width: 3vw;
+    height: 3vw;
 }
