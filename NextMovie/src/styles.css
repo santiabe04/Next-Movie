@@ -5,6 +5,8 @@ html {
 body {
 
     font-family: 'Courier New', Courier, monospace !important;
+    color: white;
+    background: #1C1717;
 
 }
 
@@ -19,16 +21,32 @@ body {
     color: black !important;
     width: 18vw;
     height: 30vw;
+    border-width: 0.25vw;
+    border-style: solid;
+    border-color: #1C1717;
     background-size: 18vw 30vw;
+    opacity: 0.5;
 
 }
 
 .this-card:hover {
 
-    background-color: rgb(129, 129, 129);
     color: white !important;
     border-style: solid;
-    border-color: black;
+    border-color: white;
+    opacity: 1;
+
+}
+
+.card-info {
+
+    opacity: 0;
+
+}
+
+.this-card:hover .card-info {
+
+    opacity: 1;
 
 }
 
@@ -46,6 +64,7 @@ body {
 
     color:white !important;
     background-color: black !important;
+    /* width: 18vw; */
 
 }
 

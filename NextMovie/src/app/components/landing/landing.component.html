@@ -32,11 +32,11 @@
     
             <div class="card text-white this-card div-margin" style="width: 18vw;" (click)="selectMovie(movie.id)" *ngFor="let movie of result" style="background-image: url('http://image.tmdb.org/t/p/w500/{{ movie.poster_path }}');">
     
-                <div class="card-body" (click)="selectMovie(movie.id)">
+                <div class="card-body card-info" (click)="selectMovie(movie.id)">
                     <h5>{{ movie.title }}</h5>
                 </div>
     
-                <div class="card-foot">
+                <div class="card-foot card-info">
                     <button class="btn btn-default info-button" (click)="selectMovieInfo(movie.id)">Info</button>
                 </div>
             
