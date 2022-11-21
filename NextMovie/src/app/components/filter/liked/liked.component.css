@@ -1,0 +1,32 @@
+.button {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #E9E9E9;
+    background-color: transparent;
+    border: 1px solid #FFFFFF;
+    text-align: center;
+    width: 18vw;
+    height: 7vw;
+    font-size: 2vw;
+    cursor: pointer;
+    border-radius: 20px;
+
+}
+  
+.button:hover {border: 1px solid #0DD4E2;}
+
+.button:active {
+    background-color: #E9E9E9 !important;
+    border: 1px solid #0DD4E2;
+    border-radius: 20px;
+}
+
+
+.pictures {
+    padding: 0.40vw;
+    width: 8vw;
+    height: 8vw;
+}

@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, OnInit } from '@angular/core';
+	import { Component, HostBinding, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Movie } from 'src/models/MoviesResult';
 import { MoviesService } from 'src/services/movies.service';
@@ -25,7 +25,17 @@ export class LandingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  
+    
+    var input = document.getElementById("search-input");
+    if (input != null){ 
+	    input.addEventListener("keypress", function(event) {
+  	    if (event.key === "Enter") {
+    			event.preventDefault();
+    			var button = document.getElementById("search-button");
+    			if (button != null) button.click();
+  		  }
+	    });
+	  }
   }
   
   /* Service's Response to Searched Movie */
