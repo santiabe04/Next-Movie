@@ -7,6 +7,7 @@ import { MovieComponent } from './components/movie/movie/movie.component';
 import { SimilarComponent } from './components/similar/similar/similar.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { LikedComponent } from './components/filter/liked/liked.component';
+import { WhichComponent } from './components/filter/which/which/which.component';
 
 /* Routes */
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path:'similar', component: SimilarComponent},
   { path:'movie/:id', component: MovieComponent},
   { path:'filter', component: FilterComponent, children:[
-    { path:'', component: LikedComponent}
+    { path:'', component: LikedComponent},
+    { path:'which', component: WhichComponent}
   ]},
   { path:'**', redirectTo: 'landing' }
 ];

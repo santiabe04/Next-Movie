@@ -5,6 +5,8 @@ import { map, Observable } from 'rxjs';
 /* Models Imports */
 import { Cast, MovieCreditsModel } from 'src/models/MovieCreditsModel';
 import { MovieModel } from 'src/models/MovieModel';
+import { MovieSimilarModel } from 'src/models/MovieSimilarModel';
+import { MovieSimilarPeopleModel } from 'src/models/MovieSimilarPeopleModel';
 import { Movie, MoviesResult } from 'src/models/MoviesResult';
 import { MovieStreamsModel } from 'src/models/MovieStreamsModel';
 
@@ -44,7 +46,6 @@ export class MoviesService {
 
   /* API's Result to Selected Movie Similar */
   getSimilarMovieById(id:string) {
-    console.log(id);
     return this.http.get<MoviesResult>('https://api.themoviedb.org/3/movie/'+id+'/recommendations?api_key=6dd700e2484582ba5b7d8205c9767990&language=es-Es&page=1').pipe(
       map( (res) => res.results )
     );
@@ -76,5 +77,23 @@ export class MoviesService {
     return this.http.get<MovieStreamsModel>(' https://api.themoviedb.org/3/movie/'+id+'/watch/providers?api_key=6dd700e2484582ba5b7d8205c9767990').pipe(
       map( (res) => res.results.AR )
     );
+  }
+
+  getSimilarByGenre(id:string) {
+    return this.http.get<MovieSimilarModel>('https://api.themoviedb.org/3/discover/movie?api_key=6dd700e2484582ba5b7d8205c9767990&language=es-ES&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres='+id+'&with_watch_monetization_types=flatrate').pipe(
+      map( (res) => res.results )
+    )
+  }
+
+  getSimilarByActor(id:string) {
+    return this.http.get<MovieSimilarPeopleModel>('https://api.themoviedb.org/3/discover/movie?api_key=6dd700e2484582ba5b7d8205c9767990&language=es-ES&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_cast='+id+'0859&with_watch_monetization_types=flatrate').pipe(
+      map( (res) => res.results )
+    )
+  }
+
+  getSimilarByDirector(id:string) {
+    return this.http.get<MovieSimilarModel>('https://api.themoviedb.org/3/discover/movie?api_key=6dd700e2484582ba5b7d8205c9767990&language=es-ES&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_crew='+id+'&with_watch_monetization_types=flatrate').pipe(
+      map( (res) => res.results )
+    )
   }
 }

@@ -158,7 +158,6 @@ export class MovieComponent implements OnInit {
 
   /* Gets the Movie's Stars Rating */
   getRating() {
-    console.log(this.result['vote_average']);
     this.rating = this.result['vote_average'] / 2;
     this.stars = Math.floor(this.rating);
     if((this.rating - this.stars) > 0.5) {

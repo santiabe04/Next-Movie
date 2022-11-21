@@ -1,6 +1,5 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Movie } from 'src/models/MoviesResult';
 import { MoviesService } from 'src/services/movies.service';
 
 @Component({
@@ -10,16 +9,20 @@ import { MoviesService } from 'src/services/movies.service';
 })
 export class SimilarComponent implements OnInit {
 
-  @Input() result: Movie[] = [];
+  @Input() result:any = [];
 
   @HostBinding('class') classes='row';
 
   idMovie:string = (sessionStorage.getItem('selectedMovie') || '');
 
+  whichFilterID:string = (sessionStorage.getItem('whichFilter') || '');
+
+  idFilter:string = '';
+
   constructor(private moviesService:MoviesService, private router:Router) { }
 
   ngOnInit(): void {
-    if(this.idMovie != '') {
+    if(this.idMovie != '' && this.whichFilterID != '') {
       this.getSimilar();
     }
     else {
@@ -29,9 +32,28 @@ export class SimilarComponent implements OnInit {
 
   /* Service's Response to Similar Movies Petition */
   getSimilar = () => {
-    this.moviesService.getSimilarMovieById(this.idMovie).subscribe( res => {
-      this.result = res;
-    })
+    if(this.whichFilterID == '1'){
+      this.idFilter = (sessionStorage.getItem('selectedGenre') || '');
+      this.moviesService.getSimilarByGenre(this.idFilter).subscribe( res => {
+        this.result = res;
+      })
+    }
+    if(this.whichFilterID == '2'){
+      this.idFilter = (sessionStorage.getItem('selectedActor') || '');
+      this.moviesService.getSimilarByActor(this.idFilter).subscribe( res => {
+        this.result = res;
+      })
+    }
+    if(this.whichFilterID == '3'){
+      this.idFilter = (sessionStorage.getItem('selectedDirector') || '');
+      this.moviesService.getSimilarByDirector(this.idFilter).subscribe( res => {
+        this.result = res;
+      })
+    }
+
+    // this.moviesService.getSimilarMovieById(this.idMovie).subscribe( res => {
+    //   this.result = res;
+    // })
   }
 
   /* Re-routes to Movie's Data Page */

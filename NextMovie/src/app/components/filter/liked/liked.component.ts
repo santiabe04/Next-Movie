@@ -37,7 +37,17 @@ export class LikedComponent implements OnInit {
   /* Re-routes to Similar Movies Page */
   goToSelectedFilter(selected:number) {
     sessionStorage.setItem('selectedMovie', this.idMovie.toString());
-    this.router.navigateByUrl('/similar');
+    
+    if(selected == 1){
+      sessionStorage.setItem('whichFilter', '1');
+    };
+    if(selected == 2){
+      sessionStorage.setItem('whichFilter', '2');
+    };
+    if(selected == 3){
+      sessionStorage.setItem('whichFilter', '3');
+    };
+    this.router.navigateByUrl('filter/which');
   }
 
 }

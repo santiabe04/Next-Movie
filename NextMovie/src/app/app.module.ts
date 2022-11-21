@@ -10,6 +10,7 @@ import { SimilarComponent } from './components/similar/similar/similar.component
 import { MovieComponent } from './components/movie/movie/movie.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { LikedComponent } from './components/filter/liked/liked.component';
+import { WhichComponent } from './components/filter/which/which/which.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LikedComponent } from './components/filter/liked/liked.component';
     SimilarComponent,
     MovieComponent,
     FilterComponent,
-    LikedComponent
+    LikedComponent,
+    WhichComponent
   ],
   imports: [
     BrowserModule,
