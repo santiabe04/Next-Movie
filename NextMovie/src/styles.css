@@ -1,5 +1,6 @@
 html {
     max-width: 98%;
+    background-color:#1C1717 !important;
 }
 
 body {
@@ -73,10 +74,6 @@ body {
     color: rgb(0, 0, 0) !important;
     background-color: white !important;
 
-}
-
-.main-background-color {
-    background-color:#1C1717 !important;
 }
 
 .main-color {
