@@ -14,9 +14,9 @@
 
             <img src="http://image.tmdb.org/t/p/w500/{{ getImage() }}" class="poster-img movie-poster movie-cast-radius" alt="">
             <br>
-              <i class="fa-solid fa-star fa-2xl" *ngFor="let rate of starsList"></i>
-              <i class="fa-solid fa-star-half-stroke fa-2xl" *ngFor="let rate of starsHalfList"></i>
-              <i class="fa-regular fa-star fa-2xl" *ngFor="let rate of starsEmptyList"></i>
+              <i class="fa-solid fa-star fa-2xl star-color" *ngFor="let rate of starsList"></i>
+              <i class="fa-solid fa-star-half-stroke fa-2xl star-color" *ngFor="let rate of starsHalfList"></i>
+              <i class="fa-regular fa-star fa-2xl star-color" *ngFor="let rate of starsEmptyList"></i>
               <br>
             <p>Duración: {{ runTimeFixed }}</p>
 
