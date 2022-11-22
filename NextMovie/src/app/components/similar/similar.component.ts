@@ -1,5 +1,6 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MovieSimilarPeopleModel } from 'src/models/MovieSimilarPeopleModel';
 import { MoviesService } from 'src/services/movies.service';
 
 @Component({

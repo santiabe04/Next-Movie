@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import { map, Observable } from 'rxjs';
 
 /* Models Imports */
@@ -86,7 +86,7 @@ export class MoviesService {
   }
 
   getSimilarByActor(id:string) {
-    return this.http.get<MovieSimilarPeopleModel>('https://api.themoviedb.org/3/discover/movie?api_key=6dd700e2484582ba5b7d8205c9767990&language=es-ES&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_cast='+id+'0859&with_watch_monetization_types=flatrate').pipe(
+    return this.http.get<MovieSimilarPeopleModel>('https://api.themoviedb.org/3/discover/movie?api_key=6dd700e2484582ba5b7d8205c9767990&language=es-ES&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_cast='+id+'&with_watch_monetization_types=flatrate').pipe(
       map( (res) => res.results )
     )
   }
