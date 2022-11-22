@@ -17,5 +17,10 @@
     align-items: center;
     text-align: center;
     min-height: 55vh;
-
 }
+
+.search-icon {
+    background-color: transparent !important;
+    color: #FFFFFF;
+}
+
