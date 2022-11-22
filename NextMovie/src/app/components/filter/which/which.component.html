@@ -17,7 +17,7 @@
         <!-- Filter Genres -->
         <div class="row justify-content-center text-center div-margin" *ngIf="whichFilterID == '1'">
     
-            <div class="card text-white this-card div-margin" style="width: 18vw;" (click)="getSimilar(object.id)" *ngFor="let object of result">
+            <div class="card text-white this-card div-margin" style="width: 18vw;" (click)="getSimilar(object.id)" *ngFor="let object of result" style="background-image: url('../../../../assets/images_icons/no_photo.jpg')">
     
                 <div class="card-body card-info" (click)="getSimilar(object.id)">
                     <h5>{{ object.name }}</h5>
@@ -30,7 +30,7 @@
         <!-- Filter Actors -->
         <div class="row justify-content-center text-center div-margin" *ngIf="whichFilterID == '2'">
     
-            <div class="card text-white this-card div-margin" style="width: 18vw;" (click)="getSimilar(object.id)" *ngFor="let object of result" style="background-image: url('http://image.tmdb.org/t/p/w500/{{ object.profile_path }}');">
+            <div class="card text-white this-card div-margin" style="width: 18vw;" (click)="getSimilar(object.id)" *ngFor="let object of result" [ngStyle]="{'background-image': 'url(' + returnPhoto(object.profile_path) + ')'}">
     
                 <div class="card-body card-info" (click)="getSimilar(object.id)">
                     <h5>{{ object.name }}</h5>
@@ -43,7 +43,7 @@
         <!-- Filter Directors -->
         <div class="row justify-content-center text-center div-margin" *ngIf="whichFilterID == '3'">
     
-            <div class="card text-white this-card div-margin" style="width: 18vw;" (click)="getSimilar(object.id)" *ngFor="let object of result" style="background-image: url('http://image.tmdb.org/t/p/w500/{{ object.profile_path }}');">
+            <div class="card text-white this-card div-margin" style="width: 18vw;" (click)="getSimilar(object.id)" *ngFor="let object of result" [ngStyle]="{'background-image': 'url(' + returnPhoto(object.profile_path) + ')'}">
     
                 <div class="card-body card-info" (click)="getSimilar(object.id)">
                     <h5>{{ object.name }}</h5>
