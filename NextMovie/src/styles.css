@@ -1,14 +1,13 @@
 html {
     max-width: 98%;
-    background-color:#1C1717 !important;
+    background-color:#131516 !important;
 }
 
 body {
 
-    font-family: 'Courier New', Courier, monospace !important;
     color: white;
-    background: #1C1717;
-
+    background: #131516;
+    font-family: 'Baloo 2', cursive !important;
 }
 
 .poster-img {
@@ -24,10 +23,9 @@ body {
     height: 30vw;
     border-width: 0.25vw;
     border-style: solid;
-    border-color: #1C1717;
+    border-color: #131516;
     background-size: 18vw 30vw;
     opacity: 0.5;
-
 }
 
 .this-card:hover {
@@ -108,3 +106,4 @@ input:focus {
 	border: 2px solid #0DD4E2;
     border-radius: 10px;
 }
+
