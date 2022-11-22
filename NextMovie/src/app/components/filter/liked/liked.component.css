@@ -39,4 +39,5 @@
 .pictures_director{
     width: 3vw;
     height: 3vw;
+    filter: invert(100%); 
 }
