@@ -40,11 +40,7 @@ export class SimilarComponent implements OnInit {
     }
     if(this.whichFilterID == '2'){
       this.idFilter = (sessionStorage.getItem('selectedActor') || '');
-      // this.moviesService.getSimilarByActor(this.idFilter).subscribe( res => {
-      //   this.result = res;
-      // })
-      /* This is temporal until we solve the problem */
-      this.moviesService.getSimilarMovieById(this.idMovie).subscribe( res => {
+      this.moviesService.getSimilarByActor(this.idFilter).subscribe( res => {
         this.result = res;
       })
     }
@@ -63,5 +59,14 @@ export class SimilarComponent implements OnInit {
   /* Re-routes to Movie's Data Page */
   selectMovieInfo(idMovie:Number) {
     this.router.navigateByUrl('/movie/'+idMovie);
+  }
+
+  returnPhoto(photo:any) {
+    if(photo != null) {
+      return 'http://image.tmdb.org/t/p/w500'+photo;
+    }
+    else {
+      return '../../../assets/images_icons/no_photo.jpg';
+    }
   }
 }

@@ -92,4 +92,12 @@ export class LandingComponent implements OnInit {
     }
   }
 
+  returnPhoto(photo:any) {
+    if(photo != null) {
+      return 'http://image.tmdb.org/t/p/w500'+photo;
+    }
+    else {
+      return '../../../assets/images_icons/no_photo.jpg';
+    }
+  }
 }
