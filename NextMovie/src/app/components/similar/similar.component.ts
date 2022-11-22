@@ -40,7 +40,11 @@ export class SimilarComponent implements OnInit {
     }
     if(this.whichFilterID == '2'){
       this.idFilter = (sessionStorage.getItem('selectedActor') || '');
-      this.moviesService.getSimilarByActor(this.idFilter).subscribe( res => {
+      // this.moviesService.getSimilarByActor(this.idFilter).subscribe( res => {
+      //   this.result = res;
+      // })
+      /* This is temporal until we solve the problem */
+      this.moviesService.getSimilarMovieById(this.idMovie).subscribe( res => {
         this.result = res;
       })
     }
