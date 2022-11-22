@@ -1,17 +1,12 @@
 .div-margin {
-
     margin: 1.25vh;
-
 }
 
 .box {
-
     display: flex;
-
 }
 
 .div-centered {
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,5 +17,31 @@
 .search-icon {
     background-color: transparent !important;
     color: #FFFFFF;
+    height: auto !important;
+    padding-top:  0px !important;
+    padding-bottom:  0px !important;
+}
+
+/* Change the font size in medium devices*/
+@media (min-width: 768px) {  
+  input {font-size: 1.5rem !important;}
+}
+
+input {
+    background-color:transparent !important;
+    color:#FFFFFF !important;
+    font-size: 1.2rem;
+    border: 0px !important;
+}
+
+/* Hidde the outline of the input*/
+input:focus {
+    outline:none !important;
+    box-shadow: none !important;
+}
+
+.input-box-border {
+    border: 2px solid #0DD4E2 !important;
+    border-radius: 20px !important;
 }
 

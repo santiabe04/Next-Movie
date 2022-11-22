@@ -50,13 +50,11 @@ body {
 }
 
 .logo {
-
     width:7.5vw;
     height:auto;
     min-height: 5vh;
     min-width: 7.5vh;
     margin: 1.5vh !important;
-
 }
 
 .info-button {
@@ -78,24 +76,7 @@ body {
     background-color:#0DD4E2;
 }
 
-input {
-    background-color:transparent !important;
-    color:#FFFFFF !important;
-    border: 0px !important;
-}
 
-/* Here you hidde the outline in an input*/
-input:focus {
-    outline:none !important;     
-    outline-width: 0 !important;     
-    box-shadow: none !important;
-}
-
-.input-border {
-    border: 2px solid #0DD4E2 !important;
-    border-radius: 20px;
-    padding: 0 !important;
-}
 
 .padding{
     padding-top: 2vh;
